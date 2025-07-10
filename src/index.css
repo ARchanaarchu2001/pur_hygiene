@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Cormorant';
+  src: url('/fonts/Cormorant/static/Cormorant-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Cormorant';
+  src: url('/fonts/Cormorant/static/Cormorant-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Cormorant';
+  src: url('/fonts/Cormorant/static/Cormorant-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* ─── Apply globally ─────────────────────────────── */
+@layer base {
+  html {
+    font-family: 'Cormorant', serif;
+  }
+}
