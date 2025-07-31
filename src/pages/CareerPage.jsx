@@ -17,35 +17,36 @@ export default function CareerPage() {
         className="bg-gradient-to-r from-[#1e75bc] to-[#006f38] text-white py-20"
       >
         <div className="mx-auto max-w-6xl px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-light mb-4">Join Our Team</h1>
+          <h1 className="text-4xl md:text-6xl font-light mb-4">Build Your Future with Pure Hygiene</h1>
           <p className="text-xl opacity-90">
-            Build your career with us and make a difference
+           Join a team that values innovation, excellence, and sustainability.
           </p>
         </div>
       </div>
 
       {/* Why Work With Us */}
-      <div className="py-16">
+      {/* Why Choose Us */}
+        <div className="py-16">
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light text-[#1e75bc] mb-4">
-              Why Work With Us?
+              Why Choose Us?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We’re looking for passionate individuals who want to grow their
-              careers in a supportive environment.
+              At Pure Hygiene, we are committed to providing top-quality solutions that ensure your business thrives with cleanliness, efficiency, and trust.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3 font-tajawal">
+          <div className="grid gap-8 md:grid-cols-4 font-tajawal">
             {[
-              ["Growth Opportunities", "Advance with clear career paths and ongoing training."],
-              ["Great Culture", "Collaborative team that values innovation and creativity."],
-              ["Competitive Benefits", "Comprehensive perks and healthy work–life balance."],
+              ["Fast Delivery", "We ensure quick turnaround and timely delivery for all your hygiene needs."],
+              ["Certified Products", "All our products meet strict industry standards for safety and performance."],
+              ["Competitive Prices", "Premium hygiene solutions at cost-effective rates to fit your budget."],
+              ["Professional Service", "Dedicated support and expert advice for every client we serve."],
             ].map(([title, desc]) => (
               <div
                 key={title}
-                className="rounded-lg border-t-4 border-[#006f38] bg-white p-8 shadow-lg"
+                className="rounded-lg border-t-4 border-[#006f38] bg-white p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <h3 className="mb-4 text-xl font-semibold text-[#1e75bc]">
                   {title}
@@ -55,7 +56,8 @@ export default function CareerPage() {
             ))}
           </div>
         </div>
-      </div>
+        </div>
+
 
       {/* Résumé Submission Form */}
       <section className="bg-gray-50 py-16">

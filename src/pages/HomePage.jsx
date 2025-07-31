@@ -1,16 +1,17 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection'
-
-import ProductGrid from '../components/ProductGrid'
 import About from '../components/About'
 import Footer from '../components/Footer'
+import InfoSection from '../components/InfoSection'
+import ProductSection from '../components/ProductSection'
 
 function HomePage() {
   return (
     <div>
         <HeroSection/>
         <About/>
-        <ProductGrid />
+        <ProductSection />
+        <InfoSection />
        
     </div>
   )

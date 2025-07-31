@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage"
 import ProductGrid from "./components/ProductGrid"
 import CategoryPage from "./pages/CategoryPage"
 import Footer from "./components/Footer"
+import ProductSection from "./components/ProductSection"
 
 function App() {
   
@@ -21,8 +22,9 @@ function App() {
            <Route path="/about" element={<AboutUsSection/>}/>
            <Route path="/career" element={<CareerPage />} />
            <Route path="/products" element={<ProductGrid />}/>
-           <Route path="/products/:slug" element={<CategoryPage />}/>
+           {/* <Route path="/products/:slug" element={<CategoryPage />}/> */}
            <Route path="/contact" element= {<ContactPage />}/>
+           <Route path="/product" element={<ProductSection/>}/>
        </Routes>
     <Footer/>
     </>   

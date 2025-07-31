@@ -51,7 +51,7 @@ export default function ContactPage() {
        <WhatsAppFloat/>
         {/* Contact Form */}
         <div>
-          <h2 className="text-3xl font-semibold text-alfanarGold mb-6">Send a Message</h2>
+          <h2 className="text-3xl font-semibold text-alfanarGold mb-6">How Can I Help You</h2>
           <form className="space-y-6">
             <div>
               <label className="block font-tajawal mb-1">Your Name</label>
