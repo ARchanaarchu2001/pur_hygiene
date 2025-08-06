@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
@@ -35,7 +36,7 @@ const categories = [
   },
   {
     slug: "ppe",
-    title: "PPE & Gloves",
+    title: "Disposables & Gloves",
     description: "Professional protection equipment",
     icon: "/images/gloves1.png",
   },
@@ -43,6 +44,7 @@ const categories = [
 
 export default function ProductSection() {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
@@ -112,11 +114,16 @@ export default function ProductSection() {
                   y: -12,
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
-                onMouseEnter={() => setHoveredCard(category.slug)}
-                onMouseLeave={() => setHoveredCard(null)}
-                onClick={() => {
-                  console.log(`Navigate to /products/${category.slug}`);
-                }}
+                onMouseEnter={() => {
+            setHoveredCard(category.slug);
+            const audio = new Audio("/sounds/menu click.wav");
+            audio.volume = 0.1;
+            audio.play().catch((e) => console.log("Sound failed:", e));
+          }}
+          onMouseLeave={() => setHoveredCard(null)}
+          onClick={() => {
+            console.log(`Navigate to /products/${category.slug}`);
+          }}
               >
                 {/* Enhanced Card Container */}
                 <motion.div 
@@ -321,7 +328,7 @@ export default function ProductSection() {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
             className="inline-flex items-center rounded-full bg-gradient-to-r from-[#006E38] to-[#1e75bd] px-12 py-4 text-xl font-bold tracking-wide text-white shadow-xl relative overflow-hidden group"
-            onClick={() => console.log("Navigate to /products")}
+            onClick={() => navigate("/catalogue.pdf")}
           >
             {/* Button shine effect */}
             <motion.div

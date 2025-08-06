@@ -5,24 +5,24 @@ export default function InfoSection() {
   const items = [
   {
     title: "Featured Products",
-    description: "Explore our top-rated hygiene products, trusted by businesses across the GCC.",
-    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=800&q=80", 
+    description: "Showcasing our top rated products that reflect our commitment to excellence.",
+    image: "/images/featured-products.png", 
     buttonText: "View Products",
     link: "/products",
   },
   {
     title: "Promotions",
-    description: "Get the best deals and special discounts on premium hygiene solutions.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80", // Shopping cart with discount theme
+    description: "Browse our current offers designed to provide outstanding quality at reduced prices",
+    image: "/images/promotion.png", 
     buttonText: "Check Offers",
-    link: "/promotions",
+    link: "/",
   },
   {
-    title: "Tutorials",
-    description: "Learn best practices and cleaning tips from our expert guides and videos.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80", // Person with cleaning supplies demonstrating
+    title: "Training & Tutorials",
+    description: "Enhance your skills with our expert-led instructional videos, designed to ensure optimal product use.",
+    image: "/images/video_tutorial.jpg", 
     buttonText: "Watch Now",
-    link: "/tutorials",
+    link: "/",
   },
 ];
 

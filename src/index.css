@@ -24,55 +24,9 @@
   }
 }
 
-/* ─── CTA Button Styles ─────────────────────────────── */
-.cta-wrapper {
-  display: inline-block;
-  position: relative;
-}
+ 
 
-.cta-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #1e75bc;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
 
-.bg-circle {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 50%;
-  z-index: 0; /* Make sure it's behind */
-  transform: scale(0);
-  transition: transform 0.4s ease;
-}
-
-.cta-button:hover .bg-circle {
-  transform: scale(12); /* Expands under text */
-}
-
-.text {
-  position: relative;
-  z-index: 2; /* Text stays above the circle */
-  color: white; /* Change to white for readability */
-  transition: color 0.3s ease;
-}
-
-.cta-button:hover .text {
-  color: #1e75bc; /* Change text color when circle expands */
-}
-
-.arrow-wrapper {
-  position: relative;
-  z-index: 2;
-  margin-left: 8px;
-}
+/* body {
+  cursor: url('/blue.png') 0 0 , auto;
+} */

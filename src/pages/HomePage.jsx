@@ -4,6 +4,7 @@ import About from '../components/About'
 import Footer from '../components/Footer'
 import InfoSection from '../components/InfoSection'
 import ProductSection from '../components/ProductSection'
+// import WhatsAppFloat from '../components/WhatsAppFloat'
 
 function HomePage() {
   return (
@@ -12,6 +13,8 @@ function HomePage() {
         <About/>
         <ProductSection />
         <InfoSection />
+        
+      
        
     </div>
   )

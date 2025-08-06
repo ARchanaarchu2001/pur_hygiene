@@ -1,16 +1,25 @@
-"use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 
 export default function About() {
   const navigate = useNavigate();
+  const soundRef = useRef(null);
+
+  useEffect(() => {
+  const audio = new Audio("/sounds/sound.mp3");
+  audio.preload = "auto";
+  audio.volume = .3;
+  soundRef.current = audio;
+}, []);
 
 const handleButtonClick = () => {
-  const audio = new Audio('/sounds/click.wav'); 
+  const audio = new Audio('/sounds/sound.mp3'); 
+  audio.volume = .1;
   audio.play();
-  navigate("/contact"); // or your existing logic
+  audio.play().catch((err) => console.log("Audio blocked", err));
+  navigate("/contact"); 
 };
 
 
@@ -18,7 +27,7 @@ const handleButtonClick = () => {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Main About Section */}
-      <section className="relative z-20 -mt-16 overflow-hidden py-16 sm:py-24">
+      <section className="relative z-20  overflow-hidden py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20">
           {/* Animated Image */}
 <motion.div
@@ -45,7 +54,7 @@ const handleButtonClick = () => {
   {/* Image Container */}
   <div className="relative z-10 bg-white rounded-xl overflow-hidden">
     <motion.img
-      src="/images/about_image.jpg"
+      src="/images/water.png"
       alt="Our team and company"
       className="h-full w-full object-cover rounded-xl"
       initial={{ scale: 1.2 }}
@@ -72,9 +81,9 @@ const handleButtonClick = () => {
   transition={{ duration: 0.8, ease: "easeOut" }}
   viewport={{ once: true }}
 >
-  <span className="relative">
+  <span className="relative ">
     <motion.span
-      className="inline-flex"
+      className="inline-flex gap-2"
       initial="hidden"
       whileInView="visible"
       variants={{
@@ -82,7 +91,7 @@ const handleButtonClick = () => {
         visible: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } },
       }}
     >
-      {"Our Story".split("").map((char, index) => (
+      {"Our Story".split(" ").map((char, index) => (
         <motion.span
           key={index}
           variants={{
@@ -91,7 +100,7 @@ const handleButtonClick = () => {
           }}
           transition={{ duration: 0.4 }}
         >
-          {char}
+          {char + "  "}
         </motion.span>
       ))}
     </motion.span>
@@ -239,7 +248,7 @@ const handleButtonClick = () => {
   whileHover={{ scale: 1.05, boxShadow: "0 0 25px #1e75bc" }}
   whileTap={{ scale: 0.95 }}
   transition={{ duration: 0.3 }}
-  className="mt-10 inline-block rounded bg-[#1e75bc] px-10 py-3 text-lg font-bold tracking-wide text-white"
+  className="mt-10 inline-block rounded bg-[#1e75bc] px-10 py-3 text-lg font-bold tracking-wide text-white cursor-pointer"
   onClick={handleButtonClick}
 >
   Get in Touch

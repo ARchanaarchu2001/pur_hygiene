@@ -1,12 +1,9 @@
 import React from 'react';
 
 export default function WhatsAppFloat() {
-  // Replace with your business WhatsApp number (with country code, no + sign)
   const phone = "971554974887";
-  
-  
   const text = "Hello%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services.";
-  
+
   return (
     <a
       href={`https://wa.me/${phone}?text=${text}`}
@@ -14,16 +11,17 @@ export default function WhatsAppFloat() {
       rel="noreferrer"
       className="
         fixed bottom-6 right-6 z-50
-        flex h-14 w-14 items-center justify-center
+        flex items-center justify-center
+        h-14 w-14 md:h-16 md:w-16
         rounded-full bg-[#25D366] shadow-lg
         transition-all duration-300 hover:bg-[#1DA851] hover:scale-110
-        animate-pulse
+        
       "
       title="Chat with us on WhatsApp"
     >
       {/* WhatsApp Icon */}
       <svg
-        className="h-7 w-7 text-white"
+        className="text-white w-6 h-6 md:w-8 md:h-8"
         viewBox="0 0 24 24"
         fill="currentColor"
       >

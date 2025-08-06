@@ -35,7 +35,7 @@ const categories = [
   },
   {
     slug: "ppe",
-    title: "PPE & Gloves",
+    title: "Disposables & Gloves",
     description: "Professional protection equipment",
     icon: "/images/gloves1.png",
   },
@@ -44,11 +44,13 @@ const categories = [
 export default function ProductGrid() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
+ 
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
       {/* Enhanced Header Section */}
       <motion.div 
-        className="bg-gradient-to-r from-[#006E38] to-[#1e75bd] px-4 py-16 relative overflow-hidden"
+        className="bg-gradient-to-r from-[#006E38] to-[#1e75bd] px-4 py-30 relative overflow-hidden"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -168,11 +170,16 @@ export default function ProductGrid() {
                   y: -12,
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
-                onMouseEnter={() => setHoveredCard(category.slug)}
-                onMouseLeave={() => setHoveredCard(null)}
-                onClick={() => {
-                  console.log(`Navigate to /products/${category.slug}`);
-                }}
+               onMouseEnter={() => {
+            setHoveredCard(category.slug);
+            const audio = new Audio("/sounds/menu click.wav");
+            audio.volume = .1;
+            audio.play().catch((e) => console.log("Sound failed:", e));
+          }}
+          onMouseLeave={() => setHoveredCard(null)}
+          onClick={() => {
+            console.log(`Navigate to /products/${category.slug}`);
+          }}
               >
                 {/* Enhanced Card Container */}
                 <motion.div 
@@ -431,6 +438,7 @@ export default function ProductGrid() {
             <motion.div
               whileHover={{ x: 8 }}
               transition={{ duration: 0.3 }}
+              
             >
               <ChevronRight className="ml-3 h-6 w-6" />
             </motion.div>
